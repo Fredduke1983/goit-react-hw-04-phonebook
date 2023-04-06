@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   FormBtn,
   FormContact,
@@ -34,3 +35,10 @@ export function ContactForm({ onSubmit, onChange, valueName, valueNumber }) {
     </FormContact>
   );
 }
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+  onChange: PropTypes.func,
+  valueName: PropTypes.string,
+  valueNumber: PropTypes.string,
+};

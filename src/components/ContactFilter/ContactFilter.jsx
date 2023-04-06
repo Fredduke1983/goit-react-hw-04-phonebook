@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FilterDelBtn, FilterListItem } from './contactFilter.styled';
 
 export function ContactFilter({
@@ -35,3 +36,17 @@ export function ContactFilter({
     </>
   );
 }
+
+ContactFilter.propTypes = {
+  onChangeFilter: PropTypes.func,
+  filter: PropTypes.string,
+  filteredContacts: PropTypes.array,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      id: PropTypes.string,
+      number: PropTypes.string,
+    }).isRequired
+  ),
+  deleteContact: PropTypes.func,
+};
